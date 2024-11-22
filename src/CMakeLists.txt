@@ -14,10 +14,17 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 #------------------------------------------------------------------------------
 # Build Benchmark
 #------------------------------------------------------------------------------
-add_executable(benchmark ${CMAKE_CURRENT_SOURCE_DIR}/benchmark.cc)
-target_link_libraries(benchmark ${HermesShm_LIBRARIES})
-# add_dependencies(grocery_db database_lib)
-# target_link_libraries(grocery_db database_lib)
+add_executable(benchmark_int ${CMAKE_CURRENT_SOURCE_DIR}/benchmark_int.cc)
+target_link_libraries(benchmark_int ${HermesShm_LIBRARIES})
+
+add_executable(benchmark_char ${CMAKE_CURRENT_SOURCE_DIR}/benchmark_char.cc)
+target_link_libraries(benchmark_char ${HermesShm_LIBRARIES})
+
+add_executable(benchmark_double ${CMAKE_CURRENT_SOURCE_DIR}/benchmark_double.cc)
+target_link_libraries(benchmark_double ${HermesShm_LIBRARIES})
+
+add_executable(benchmark_size_t ${CMAKE_CURRENT_SOURCE_DIR}/benchmark_size_t.cc)
+target_link_libraries(benchmark_size_t ${HermesShm_LIBRARIES})
 
 #------------------------------------------------------------------------------
 # Add libraries + executables to CMake install
